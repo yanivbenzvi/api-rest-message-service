@@ -9,23 +9,23 @@ router.route('/')
     /**
      * @api {get} /api/v1/message Get all messages of specific recipient.
      * @apiName GetMessages
-     * @apiGroup Message
+     * @apiGroup MessageModel
      * @apiVersion 1.0.0
      * @apiPermission public
      * @apiDescription Get all messages
-     * @apiParam {String} [recipient] Message recipient
+     * @apiParam {String} [recipient] MessageModel recipient
      */
       .get(validate(getMessage), controller.getMessage)
       /**
        * @api {post} /api/v1/message Create a new message.
        * @apiName CreateMessage
-       * @apiGroup Message
+       * @apiGroup MessageModel
        * @apiVersion 1.0.0
        * @apiPermission public
        * @apiDescription Create a new message
-       * @apiParam {String} [recipient] Message recipient
-       * @apiParam {String} [message] Message content
-       * @apiParam {String} [sender] Message sender
+       * @apiParam {String} [recipient] MessageModel recipient
+       * @apiParam {String} [message] MessageModel content
+       * @apiParam {String} [sender] MessageModel sender
        */
       .post(validate(createMessage), controller.createMessage)
 

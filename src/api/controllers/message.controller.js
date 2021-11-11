@@ -1,6 +1,6 @@
 import {CREATED, OK} from 'http-status'
-import Message   from '../modules/message'
-import {next}    from 'lodash/seq'
+import MessageModel  from '../models/message.model'
+import {next}        from 'lodash/seq'
 
 /**
  * @description Controller for get all messages of a specific recipient
@@ -10,7 +10,7 @@ import {next}    from 'lodash/seq'
  */
 export const getMessage = (req, res, next) => {
     try{
-        const messages = Message.findAll(item => item["rec"] === req.params.recipient)
+        const messages = MessageModel.findAll(item => item["rec"] === req.params.recipient)
 
         res.status(OK).json({
             messages
@@ -31,7 +31,7 @@ export const getMessage = (req, res, next) => {
  */
 export const createMessage = (req, res, next) => {
     try {
-        const message = new Message(req.body)
+        const message = new MessageModel(req.body)
 
         message.save()
         res.status(CREATED).json({

@@ -1,9 +1,9 @@
-import {expect} from 'chai'
-import Entity   from '../../src/api/modules/entity'
-import DataBase from '../../src/utility/dataBase'
+import {expect}    from 'chai'
+import EntityModel from '../../src/api/models/entity.model'
+import DataBase    from '../../src/utility/dataBase'
 
 
-describe('Entity [Unit]', () => {
+describe('EntityModel [Unit]', () => {
     let stub   = null
     const data = {
         id:          '1',
@@ -13,9 +13,11 @@ describe('Entity [Unit]', () => {
         updatedAt:   '2017-01-01T00:00:00.000Z',
     }
 
-    class mockClass extends Entity {
+    class mockClass extends EntityModel {
+        static ENTITY_TYPE = 'mockClass';
+
         constructor(data) {
-            super('mockClass')
+            super(mockClass.ENTITY_TYPE)
             this.data = data
         }
     }

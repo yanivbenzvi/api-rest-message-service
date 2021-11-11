@@ -65,7 +65,7 @@ export default class DataBase {
         if (this.entities.hasOwnProperty(entityName)) {
             return cloneDeep(this.entities[entityName])
         } else {
-            throw new Error("Error: Entity not found")
+            throw new Error("Error: EntityModel not found")
         }
     }
 

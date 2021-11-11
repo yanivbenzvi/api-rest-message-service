@@ -9,6 +9,6 @@ app.listen(port, () => {
  * Exports express
  * @public
  */
-export default app
+module.exports = app
 
 

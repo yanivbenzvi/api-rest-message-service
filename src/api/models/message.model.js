@@ -1,19 +1,19 @@
-import Entity from './entity'
+import EntityModel      from './entity.model'
 import { v4 as uuidv4 } from 'uuid';
 
 /**
- * Message class
+ * MessageModel class
  */
-export default class Message extends Entity{
+export default class MessageModel extends EntityModel{
     static ENTITY_TYPE = 'message';
     /**
-     * Message constructor
-     * @param messageContent
+     * MessageModel constructor
+     * @param message
      * @param sender
      * @param recipient
      */
     constructor({message, sender, recipient}){
-        super(Message.ENTITY_TYPE)
+        super(MessageModel.ENTITY_TYPE)
 
         this.id = uuidv4()
         this.message = message;

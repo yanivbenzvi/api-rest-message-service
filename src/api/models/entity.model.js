@@ -3,9 +3,9 @@ import {cloneDeep} from 'lodash'
 
 /**
  * Base class for all entities.
- * @class Entity
+ * @class EntityModel
  */
-export default class Entity {
+export default class EntityModel {
 
     /**
      * @constructor
