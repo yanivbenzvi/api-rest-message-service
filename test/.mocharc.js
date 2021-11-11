@@ -9,5 +9,7 @@ module.exports = {
         "babel-polyfill"
     ],
     recursive: true,
-    reporter: 'nyan',
+    // reporter: 'nyan',
+    reporter: 'spec',
+    ui: 'bdd'
 }

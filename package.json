@@ -5,10 +5,11 @@
     "main": "index.js",
     "scripts": {
         "dev": "cross-env nodemon --exec babel-node src/index.js",
-        "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text mocha --reporter=landing --config test/.mocharc.js --timeout 20000 --exit --recursive test/**/*.spec.js",
-        "test:unit": "cross-env NODE_ENV=test mocha --reporter=landing --config test/.mocharc.js test/unit/*.spec.js",
-        "test:feature": "cross-env NODE_ENV=test mocha --reporter=landing --config test/.mocharc.js test/feature/*.spec.js",
-        "test:integration": "cross-env NODE_ENV=test mocha --reporter=landing --config test/.mocharc.js --timeout 20000 --exit test/integration/*.spec.js"
+        "test:unit": "cross-env NODE_ENV=test mocha --config test/.mocharc.js test/unit/*.spec.js",
+        "test:integration": "cross-env NODE_ENV=test mocha --reporter=landing --config test/.mocharc.js --timeout 20000 --exit test/integration/*.spec.js",
+        "build": "babel src --out-dir dist --copy-files --config-file=./.babelrc",
+        "start": "cross-env NODE_ENV=production node ./dist/index.js",
+        "docs": "cross-env apidoc -i src -o docs"
     },
     "repository": {
         "type": "git",
@@ -41,6 +42,7 @@
         "@babel/preset-env": "^7.14.7",
         "@babel/register": "^7.14.5",
         "@types/chai": "^4.2.21",
+        "apidoc": "^0.17.5",
         "babel-plugin-istanbul": "^5.2.0",
         "babel-plugin-module-resolver": "^3.2.0",
         "babel-polyfill": "^6.26.0",
