@@ -44,7 +44,7 @@ describe('MessageModel [API]', async () => {
         })
     })
 
-    describe.only('GET /v1/message', () => {
+    describe('GET /v1/message', () => {
         it('should retrieve BAD_REQUEST when recipient param is not attached to the parameter', () => {
             return request(app)
                 .get('/v1/message')
